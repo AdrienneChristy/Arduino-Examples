@@ -1,0 +1,32 @@
+// Counter prints hours:minutes:seconds in serial output
+int seconds;
+int minutes;
+int hours;
+
+void setup()
+{ 
+seconds = 0;
+minutes = 0;
+hours= 0;
+Serial.begin(9600);
+}
+
+void loop()
+{ Serial.print(hours);
+  Serial.print(":");
+  Serial.print(minutes);
+  Serial.print(":");
+  Serial.println(seconds);
+  delay(1000); 
+  seconds++;
+  if(seconds == 60)
+  {
+    minutes ++;
+    seconds = 0;
+    if(minutes == 60)
+    {
+    hours ++;
+    minutes = 0;
+     }
+   }
+}
